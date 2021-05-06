@@ -68,26 +68,8 @@ cd Identifying-Genes-Associated-with-Symptom-Status
 
 ## User Directions
 
-### 1. Download the Dataset Using NCBI's "datasets" Tool
 
-First, run the curl command to obtain "datasets" from NCBI:
-```
-curl -o datasets 'https://ftp.ncbi.nlm.nih.gov/pub/datasets/command-line/LATEST/linux-amd64/datasets'
-```
-
-Next, run the chmod command to get permission and enable execution of "datasets" for Linux:
-```
-chmod +x datasets
-```
-To obtain the test dataset, run the getAnnotations python script which will use the ecoliAccessions.txt file to pull all assembly and annotation files for each test sample:
-```
-python3 getAnnotations.py
-```
-### Output:
-* Individual annotations for each strain in Annotations folder
-* ProteinSeqs folder with a file of protein sequences of every CDS for each strain
-* ProteinSeqs.faa file that contains all protein sequences for every strain (for use in Usearch)
-### 2. Prokka Annotation
+### 1. Prokka Annotation
 To install Prokka, make sure conda is installed on your os
 
 To check conda version:
@@ -120,7 +102,6 @@ This scrpit will organized all annotations and outputs into specific folders.
 ```
 Python3 MoveFile.py
 ```
-After this step, you should have ProteinSeqs folder for all sorted .faa files and a Prokka_annotations folder for all output annotations organized by genome's name.
 
 
 ### 3. Obtain Clusters and Centroid Sequences Using Usearch
