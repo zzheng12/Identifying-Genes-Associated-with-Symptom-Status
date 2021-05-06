@@ -95,14 +95,12 @@ Then there are two flag options when you run it:
 ### 1.Test
 ```
 Python3 project_wrapper.py test
-
 ```
 If you put test as flag, our test dataset will be called. Use test assembly files in the Test Data folder.
 ### 2. User
 
 ```
 Python3 project_wrapper.py user
-
 ```
 If you put user in as flag, you will need to create a folder called "Assemblies" in the main direction. Then creat a csv file named "Data_Information.csv" to contain RefSeq Assembly Accession numbers, Strain Identifier and Symptoms 
 
