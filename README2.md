@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Our pipleline will use python scripts as programming language and Linux as operating system
+Our pipleline will use python scripts as programming language and Linux as operating system. 
 
 ## Software
 
@@ -46,16 +46,7 @@ Summary information about each symptom in a table format
 
 ## Installation
 
-We will need conda to install Prokka, please make sure you have conda on your linux.
-To get more information with conda:
-https://docs.conda.io/en/latest/miniconda.html#linux-installers
 
-Make sure you are downloading the currect version matched your system!
-
-To check conda version:
-```
-conda -V 
-```
 
 In order to run this code from your working directory, use this git command to clone this repository to your workspace:
 ```
@@ -66,11 +57,12 @@ Then, change working directories in order to access all files from the cloned re
 cd Identifying-Genes-Associated-with-Symptom-Status
 ```
 
-## User Directions
 
+We will need conda to install Prokka, please make sure you have conda on your linux.
+To get more information with conda:
+https://docs.conda.io/en/latest/miniconda.html#linux-installers
 
-### 1. Prokka Annotation
-To install Prokka, make sure conda is installed on your os
+Make sure you are downloading the currect version matched your system!
 
 To check conda version:
 ```
@@ -95,60 +87,8 @@ Scipy:
 
 If there further questions, go back to the package instruction part and see details.
 
+## User Directions
 
 
-This scrpit will organized all annotations and outputs into specific folders. 
-
-```
-Python3 MoveFile.py
-```
 
 
-### 3. Obtain Clusters and Centroid Sequences Using Usearch
-
-Before using Usearch, the binary Usearch downloaded from https://drive5.com/usearch/download.html, must be unzipped using this command:
-```
-gunzip usearch_linux 
-```
-Then this command must be run to gain access to the binary file:
-```
-chmod +x ./usearch_linux
-```
-Finally, a directory must be made for usearch to place the cluster files into:
-```
-mkdir cluster_dir
-```
-Now that all variables are prepared, run the usearch command to obtain clusters: 
-```
-./usearch_linux -cluster_fast ProteinSeqs.faa -id 0.90 -centroids nr.fasta -clusters cluster_dir/c_
-```
-Usearch uses the cluster_fast method in order to produce similar gene clustering accross all sample strains. The centroids used to define these clusters are the homologous genes that we will be looking at.
-
-#### Output:
-* Cluster files containing genes that cluster together using the cluster_fast method
-* Centroid sequence file (nr.fasta) which contains the centroid sequences for each cluster
-
-### 4. Generate Presence/Absence Matrix:
-
-To generate a presence/absence matrix for the entire dataset, as well as separate matricies for each symptom sample, run the generate_pres_abs_matrix python script:
-```
-python3 generate_pres_abs_matrix.py
-```
-This script creates a list of homologous genes from the centroid fasta file, then parses through each protein file per sample to identify which homologous gene names are present or absent for each sample.
-
-#### Output:
-* Samples with no_luts presence absence matrix
-* Samples with OAB presence absence matrix
-* Samples with UTI presence absence matrix
-* Samples with UUI presence absence matrix
-* All Samples presence absence matrix
- 
- ### 4. Quantitative Association Testing
- 
- This is still in the works at the moment, but to see some results, run the the quantitative_association python script:
- ```
- python3 quantitative_association.py
- ```
-#### Output:
-* Quantitative_Association_Summary_Results.txt which summarizes some basic presence/absence questions and frequencies about each symptom group.
-* Genes_Present_Within_Strains.txt which supplies the user with all genes present within each strain for every symptom group.
