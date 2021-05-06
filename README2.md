@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Our pipleline will use python scripts as programming language and Linux as operating system. 
+Our pipleline will use python scripts as programming language and Linux as operating system. We will use Prokka to annotate multiple bacterial genomes from the same species, then use Usearch to identify homologous genes among the genomes. Then we use python to statistically analyze if these genes are correlated with symptom status.
 
 ## Software
 
@@ -88,7 +88,12 @@ Scipy:
 If there further questions, go back to the package instruction part and see details.
 
 ## User Directions
-
+After the above software installation, make sure you are in Prokka-env
+Then there are two options:
+### 1.Test
+If you type test in the terminal, our test dataset will be called. Use test assembly files in the Test Data folder.
+### 2. User
+If you type user in the terminal, you will need to create an Assembly folder to store assembly files. Get _correlation_results.txt, correlation_matrix.csv and ResultsTable.csv
 
 
 
