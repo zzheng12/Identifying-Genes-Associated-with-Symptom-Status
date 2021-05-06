@@ -102,14 +102,14 @@ Create the prokka environment, add the bioconda channel, install conda:
 conda create -n prokka-env -c conda-forge -c bioconda prokka
 ```
 
-Install python packages:
+Install python packages in prokka env:
 
 Biopython:
-```conda install -c conda-forge biopython```
+```conda install biopython```
 Pandas:
 ```conda install pandas```
 Scipy:
-```conda install -c anaconda scipy```
+```conda install scipy```
 
 If there further questions, go back to the package instruction part and see details.
 
