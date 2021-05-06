@@ -89,11 +89,20 @@ If there further questions, go back to the package instruction part and see deta
 
 ## User Directions
 After the above software installation, make sure you are in Prokka-env
-Then there are two options:
+
+We have project_wrapper.py to get our result
+Then there are two flag options when you run it:
 ### 1.Test
-If you type test in the terminal, our test dataset will be called. Use test assembly files in the Test Data folder.
+```
+Python3 project_wrapper.py test
+
+```
+If you put test as flag, our test dataset will be called. Use test assembly files in the Test Data folder.
 ### 2. User
-If you type user in the terminal, you will need to create an Assembly folder to store assembly files. Get _correlation_results.txt, correlation_matrix.csv and ResultsTable.csv
 
+```
+Python3 project_wrapper.py user
 
+```
+If you put user in as flag, you will need to create a folder called "Assemblies" in the main direction. Then creat a csv file named "Data_Information.csv" to contain RefSeq Assembly Accession numbers, Strain Identifier and Symptoms 
 
